@@ -23,6 +23,7 @@ def make_tickets(source_name, target_doc=None):
                 }
         }, target_doc)
         return doclist
+       
 @frappe.whitelist()
 def purchase_invoice_make_tickets(source_name, target_doc=None):
         doclist = get_mapped_doc("Purchase Invoice", source_name, {
@@ -291,4 +292,6 @@ def expense_claim_add_comments_from_tickets(ec,remarks):
         #to add a new comment
         d.add_comment('Comment',text=remarks)
         return d
-    
+
+#def get_permission_query_conditions(user):
+        #return "(tabTicket.ticket_owner='{user}'".format(user=frappe.session.user)

@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Ticket', {
+	
 	validate: function(frm) {
         if(frm.doc.status=='Completed' && (frm.doc.remarks=='' || frm.doc.remarks==null)) {
            msgprint('Please enter remarks before complete the ticket.');

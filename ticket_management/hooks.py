@@ -62,7 +62,7 @@ app_license = "GNU General Public License"
 # See frappe.core.notifications.get_notification_config
 
 # notification_config = "ticket_management.notifications.get_notification_config"
-
+notification_config = "ticket_management.ticket_management.notifications.get_notification_config"
 # Permissions
 # -----------
 # Permissions evaluated in scripted ways
@@ -70,7 +70,9 @@ app_license = "GNU General Public License"
 # permission_query_conditions = {
 # 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
-#
+#permission_query_conditions = {
+   # "Ticket": "ticket_management.ticket_management.doctype.ticket.ticket.get_permission_query_conditions",
+#}
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }

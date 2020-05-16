@@ -1,5 +1,9 @@
 frappe.ui.form.on('Ticket Details', {
-	end_time: function(frm, cdt, cdn) {
+	refresh:function(frm)
+	{
+		alert("hai");
+	}
+	/*end_time: function(frm, cdt, cdn) {
 			var d = locals[cdt][cdn];
 			var hours=0
 			var minutes=0
@@ -19,5 +23,5 @@ frappe.ui.form.on('Ticket Details', {
 			//frappe.model.set_value(cdt,cdn,"duration",d.end_time);
 			 frappe.model.set_value(cdt,cdn,"duration",hours+":"+minutes+":"+seconds);
 		//frm.refresh_field("duration");
- 	}
+ 	}*/
 })
