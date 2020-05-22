@@ -96,6 +96,7 @@ doctype_js = {
     "Purchase Receipt":"public/js/purchase_receipt.js",
     "Stock Entry":"public/js/stock_entry.js",
     "Ticket Details":"public/js/ticket_details.js",
+    "Opportunity":"public/js/opportunity.js",
     }
 # doc_events = {
 # 	"*": {

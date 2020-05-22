@@ -1,9 +1,10 @@
 frappe.ui.form.on('Quotation', {
-    refresh: function(frm) {
+  onload: function(frm) {
+      if (!frm.doc.__islocal && frm.doc.docstatus<2) {
        frm.add_custom_button(__('Tickets'),
          cur_frm.cscript['create_tickets'], __("Make"));
-         dashboard_link_doctype(frm, "Ticket");
-    },
+    }
+  }
     
 });
 
