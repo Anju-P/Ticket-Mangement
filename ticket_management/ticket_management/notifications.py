@@ -7,8 +7,9 @@ import frappe
 def get_notification_config():
 	notifications =  { "for_doctype":
 		{
-			"Ticket": {"status": "Open","allocated_to":frappe.session.user,
-            },
+			"Ticket": {"status": ("in", ("Completed", "Open")),
+			"allocated_to":frappe.session.user,
+            },	
 	}
     }
 
@@ -16,5 +17,4 @@ def get_notification_config():
 	for doc in frappe.get_all('DocType',
 		fields= ["name"], filters = {"name": ("not in", doctype), 'is_submittable': 1,}):
 		notifications["for_doctype"][doc.name] = {"docstatus": 0}
-
 	return notifications

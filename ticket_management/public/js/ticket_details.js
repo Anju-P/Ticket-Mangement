@@ -1,7 +1,7 @@
 frappe.ui.form.on('Ticket Details', {
 	refresh:function(frm)
 	{
-		alert("hai");
+		
 	}
 	/*end_time: function(frm, cdt, cdn) {
 			var d = locals[cdt][cdn];
