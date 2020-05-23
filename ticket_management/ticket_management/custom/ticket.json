@@ -306,14 +306,14 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
-   "creation": "2020-05-16 09:49:35.732212",
+   "creation": "2020-05-22 22:37:36.585332",
    "default_value": null,
    "doc_type": "Ticket",
    "docstatus": 0,
    "doctype_or_field": "DocField",
    "field_name": "allocated_to",
    "idx": 0,
-   "modified": "2020-05-16 09:49:35.732212",
+   "modified": "2020-05-22 22:37:36.585332",
    "modified_by": "Administrator",
    "name": "Ticket-allocated_to-default",
    "owner": "Administrator",
@@ -322,7 +322,7 @@
    "parenttype": null,
    "property": "default",
    "property_type": "Text",
-   "value": "User"
+   "value": ""
   },
   {
    "_assign": null,
