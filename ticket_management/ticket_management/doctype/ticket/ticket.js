@@ -15,7 +15,18 @@ frappe.ui.form.on('Ticket', {
          msgprint('Only Ticket Owner can Close the Ticket');
          validated = false;
          
-        }
+		}
+		if(frm.doc.ticket_owner!=user&& frm.doc.expected_start_date!=null &&frm.doc.expected_end_date!=null) {
+			frappe.msgprint(__("Only Ticket Owner Allowed to Change Date"));
+			validated = false;
+			
+		   }
+		
+		if(frm.doc.status=='Closed' && frm.doc.ticket_owner!=user) {
+			msgprint('Only Ticket Owner can Close the Ticket');
+			validated = false;
+		   }
+		   
 	
 		if(frm.doc.sales_order && frm.doc.remarks &&  frm.doc.status=='Closed' )
 		{
@@ -157,6 +168,37 @@ frappe.ui.form.on('Ticket', {
 			}
 		});	
 	  }
+	},
+	expected_end_date:function(frm,cdt,cdn){
+        var d =locals[cdt][cdn];
+        if(d.expected_start_date && d.expected_end_date) {
+            
+
+			var from_date = Date.parse(d.expected_start_date);
+			var to_date = Date.parse(d.expected_end_date);
+
+			if(to_date < from_date){
+				frappe.msgprint(__("Expected End Date Should be After Expected Start Date"));
+				frm.set_value('expected_end_date', '');
+				return;
+			}
+		}
+	},
+	completion_date:function(frm,cdt,cdn){
+        var d =locals[cdt][cdn];
+        if(d.expected_start_date && d.completion_date) {
+            
+
+			var from_date = Date.parse(d.expected_start_date);
+			var to_date = Date.parse(d.completion_date);
+
+			if(to_date < from_date){
+				frappe.msgprint(__("Completed Date Should be After Expected Start Date"));
+				frm.set_value('completion_date', '');
+				return;
+			}
+		}
 	}
+	
 
 });

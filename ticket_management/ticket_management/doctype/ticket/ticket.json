@@ -10,10 +10,13 @@
   "title",
   "description",
   "ticket_owner",
+  "expected_start_date",
+  "completion_date",
   "data_3",
   "posting_date",
   "status",
   "allocated_to",
+  "expected_end_date",
   "section_break_9",
   "details",
   "remarks",
@@ -58,7 +61,7 @@
    "label": "Description"
   },
   {
-   "fetch_from": "frappe.session.user",
+   "default": "__user",
    "fieldname": "ticket_owner",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -224,9 +227,26 @@
    "label": "Stock Entry",
    "options": "Stock Entry",
    "read_only": 1
+  },
+  {
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Expected Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completed Date"
   }
  ],
- "modified": "2020-05-20 12:18:19.338880",
+ "modified": "2020-10-03 17:31:59.218632",
  "modified_by": "Administrator",
  "module": "Ticket Management",
  "name": "Ticket",
