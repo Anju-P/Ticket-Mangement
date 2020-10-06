@@ -11,12 +11,12 @@
   "description",
   "ticket_owner",
   "expected_start_date",
-  "completion_date",
   "data_3",
   "posting_date",
   "status",
   "allocated_to",
   "expected_end_date",
+  "completion_date",
   "section_break_9",
   "details",
   "remarks",
@@ -231,22 +231,22 @@
   {
    "fieldname": "expected_start_date",
    "fieldtype": "Date",
-   "label": "Expected Start Date",
+   "label": "Planned Start Date",
    "reqd": 1
   },
   {
    "fieldname": "expected_end_date",
    "fieldtype": "Date",
-   "label": "Expected End Date",
+   "label": "Planned End Date",
    "reqd": 1
   },
   {
    "fieldname": "completion_date",
    "fieldtype": "Date",
-   "label": "Completed Date"
+   "label": "Actual End Date"
   }
  ],
- "modified": "2020-10-03 17:31:59.218632",
+ "modified": "2020-10-04 11:51:50.441519",
  "modified_by": "Administrator",
  "module": "Ticket Management",
  "name": "Ticket",
