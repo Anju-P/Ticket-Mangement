@@ -169,6 +169,21 @@ frappe.ui.form.on('Ticket', {
 		});	
 	  }
 	},
+	expected_start_date:function(frm,cdt,cdn){
+        var d =locals[cdt][cdn];
+        if(d.expected_start_date && d.expected_end_date) {
+            
+
+			var from_date = Date.parse(d.expected_start_date);
+			var to_date = Date.parse(d.expected_end_date);
+
+			if(to_date < from_date){
+				frappe.msgprint(__("Planned Start Date Should be Before Planned End Date"));
+				frm.set_value('expected_start_date', '');
+				return;
+			}
+		}
+	},
 	expected_end_date:function(frm,cdt,cdn){
         var d =locals[cdt][cdn];
         if(d.expected_start_date && d.expected_end_date) {
@@ -261,8 +276,6 @@ frappe.ui.form.on('Ticket Details', {
 		frappe.model.set_value(d.doctype, d.name,"start_time",'')
 		frappe.model.set_value(d.doctype, d.name,"end_time",'')
 		frappe.model.set_value(d.doctype, d.name,"status",'')
-        //frm.doc.details.splice(frm.doc.details[details_idx], 1)
-		//frm.refresh_field('details')
 		
 	}
 	if(count>1)
