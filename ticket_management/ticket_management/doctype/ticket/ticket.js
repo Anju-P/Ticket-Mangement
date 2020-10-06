@@ -278,19 +278,19 @@ frappe.ui.form.on('Ticket Details', {
 		frappe.model.set_value(d.doctype, d.name,"status",'')
 		
 	}
-	if(count>1)
-	{
-		frappe.msgprint(__("Activity alredy Entered"));
-		validated = false;
-		frappe.model.set_value(d.doctype, d.name,"type_of_task",'')
-		frappe.model.set_value(d.doctype, d.name,"date",'')
-		frappe.model.set_value(d.doctype, d.name,"start_time",'')
-		frappe.model.set_value(d.doctype, d.name,"end_time",'')
-		frappe.model.set_value(d.doctype, d.name,"status",'')
+	//if(count>1)
+	//{
+		//frappe.msgprint(__("Activity alredy Entered"));
+		//validated = false;
+		//frappe.model.set_value(d.doctype, d.name,"type_of_task",'')
+		//frappe.model.set_value(d.doctype, d.name,"date",'')
+		//frappe.model.set_value(d.doctype, d.name,"start_time",'')
+		//frappe.model.set_value(d.doctype, d.name,"end_time",'')
+		//frappe.model.set_value(d.doctype, d.name,"status",'')
         //frm.doc.details.splice(frm.doc.details[details_idx], 1)
 		//frm.refresh_field('details')
 		
-	}
+	//}
 
 	
 },
