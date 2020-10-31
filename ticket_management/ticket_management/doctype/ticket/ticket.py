@@ -9,6 +9,8 @@ from frappe.model.document import Document
 from frappe.model.document import get_doc
 from frappe.model.document import Document
 
+from frappe import _
+
 class Ticket(Document):
 	pass
 @frappe.whitelist()
@@ -295,3 +297,24 @@ def expense_claim_add_comments_from_tickets(ec,remarks):
 
 #def get_permission_query_conditions(user):
         #return "(tabTicket.ticket_owner='{user}'".format(user=frappe.session.user)
+@frappe.whitelist()
+def make_ticket_in_entry(source_name, target_doc=None):
+        frappe.msgprint("hai")
+        doclist = get_mapped_doc("Ticket", source_name, {
+                "Ticket": {
+                        "doctype": "Ticket",
+                        "field_map": {
+                                "name": "name"
+                        },
+                        "validation": {
+                                "docstatus": ["=", 1]
+                                }
+                                },
+                        "Ticket Details": {
+                        "doctype": "Ticket Details",
+                        "field_map": {
+                                "type_of_task": "actions",
+                        },
+                },
+        },)
+        return doclist

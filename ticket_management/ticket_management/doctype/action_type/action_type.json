@@ -1,24 +1,24 @@
 {
- "autoname": "field:actions",
- "creation": "2020-05-15 14:12:36.958202",
+ "autoname": "field:type",
+ "creation": "2020-10-29 13:37:13.367127",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "actions"
+  "type"
  ],
  "fields": [
   {
-   "fieldname": "actions",
+   "fieldname": "type",
    "fieldtype": "Data",
-   "label": "Actions",
+   "label": "Type",
    "unique": 1
   }
  ],
- "modified": "2020-05-20 11:52:58.668553",
+ "modified": "2020-10-29 13:40:18.175858",
  "modified_by": "Administrator",
  "module": "Ticket Management",
- "name": "Ticket Actions",
+ "name": "Action Type",
  "owner": "Administrator",
  "permissions": [
   {
@@ -30,18 +30,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Item Manager",
    "share": 1,
    "write": 1
   }

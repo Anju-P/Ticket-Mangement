@@ -16,9 +16,9 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "Ticket Actions",
+					"name": "Ticket Action",
 					#"route": "#List/TicketActions",
-					"description": _("Ticket Actions / task."),
+					"description": _("Ticket Action / task."),
 					#"onboard": 1,
 				},
 				

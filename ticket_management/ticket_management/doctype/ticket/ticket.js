@@ -327,7 +327,7 @@ $.each(frm.doc.details || [], function(i, v) {
 	}
 
 })
-if(count>1)
+/*if(count>1)
 {
 	frappe.msgprint(__("Cant Enter Two activities in same duration"));
 	validated = false;
@@ -339,6 +339,53 @@ if(count>1)
 	//frm.doc.details.splice(frm.doc.details[details_idx], 1)
 	//frm.refresh_field('details')
 	
-}
+}*/
 }
 });
+
+frappe.ui.form.on('Ticket', {
+	get_items: function (frm) {
+		//frm.add_custom_button(__('Action'), function() {
+			var d=	new frappe.ui.form.MultiSelectDialog({
+			doctype: "Ticket Action",
+			target: frm,
+			setters: {
+				type: frm.doc.type || undefined,
+			},
+			date_field: "posting_date",
+			get_query() {
+				return {
+					filters: {
+						docstatus: ['!=', 1],
+						//category:[frm.doc.category]
+					}
+				}
+			},
+			action(selections) {
+				frm.clear_table("details");
+				frm.refresh_field("details");
+				for (var i = 0; i < selections.length; i++) {
+					var d = frm.add_child("details");
+					var item = selections[i];
+					frappe.model.set_value(d.doctype, d.name, "type_of_task", item);
+					frm.refresh_field("details");
+				}
+
+			}
+		}, );
+
+
+	},
+
+	
+});
+/*frappe.ui.form.on("Ticket", {
+	onload: function (frm, cdt, cdn) {
+	let btn = document.createElement('a');
+	btn.innerText = 'Refresh';
+	btn.className = 'grid-upload btn btn-xs btn-default';
+	frm.fields_dict.items.grid.wrapper.find('.grid-upload').removeClass('hide').parent().append(btn);
+	btn.addEventListener("click", function(){
+	});
+	}	
+})*/

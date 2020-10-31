@@ -1,0 +1,82 @@
+{
+ "autoname": "field:actions",
+ "creation": "2020-05-15 14:12:36.958202",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "actions",
+  "remarks",
+  "posting_date",
+  "column_break_3",
+  "type"
+ ],
+ "fields": [
+  {
+   "fieldname": "actions",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Action",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Action Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "modified": "2020-10-29 17:12:13.212336",
+ "modified_by": "Administrator",
+ "module": "Ticket Management",
+ "name": "Ticket Action",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Item Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

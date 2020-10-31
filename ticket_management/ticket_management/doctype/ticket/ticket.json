@@ -18,6 +18,7 @@
   "expected_end_date",
   "completion_date",
   "section_break_9",
+  "get_items",
   "details",
   "remarks",
   "more_information_section",
@@ -36,7 +37,8 @@
   "purchase_receipt",
   "sales_invoice",
   "production_plan",
-  "stock_entry"
+  "stock_entry",
+  "type"
  ],
  "fields": [
   {
@@ -61,7 +63,7 @@
    "label": "Description"
   },
   {
-   "default": "__user",
+   "fetch_from": "frappe.session.user",
    "fieldname": "ticket_owner",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -100,10 +102,15 @@
    "fieldtype": "Section Break"
   },
   {
+   "bold": 1,
    "fieldname": "details",
    "fieldtype": "Table",
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Details",
-   "options": "Ticket Details"
+   "options": "Ticket Details",
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "remarks",
@@ -229,6 +236,11 @@
    "read_only": 1
   },
   {
+   "fieldname": "get_items",
+   "fieldtype": "Button",
+   "label": "Get Actions"
+  },
+  {
    "fieldname": "expected_start_date",
    "fieldtype": "Date",
    "label": "Planned Start Date",
@@ -244,9 +256,15 @@
    "fieldname": "completion_date",
    "fieldtype": "Date",
    "label": "Actual End Date"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Activity Type",
+   "options": "Action Type"
   }
  ],
- "modified": "2020-10-04 11:51:50.441519",
+ "modified": "2020-10-31 17:39:51.316478",
  "modified_by": "Administrator",
  "module": "Ticket Management",
  "name": "Ticket",
