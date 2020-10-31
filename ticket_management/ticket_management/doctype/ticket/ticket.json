@@ -10,11 +10,15 @@
   "title",
   "description",
   "ticket_owner",
+  "expected_start_date",
   "data_3",
   "posting_date",
   "status",
   "allocated_to",
+  "expected_end_date",
+  "completion_date",
   "section_break_9",
+  "get_items",
   "details",
   "remarks",
   "more_information_section",
@@ -33,7 +37,8 @@
   "purchase_receipt",
   "sales_invoice",
   "production_plan",
-  "stock_entry"
+  "stock_entry",
+  "type"
  ],
  "fields": [
   {
@@ -97,10 +102,15 @@
    "fieldtype": "Section Break"
   },
   {
+   "bold": 1,
    "fieldname": "details",
    "fieldtype": "Table",
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Details",
-   "options": "Ticket Details"
+   "options": "Ticket Details",
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "remarks",
@@ -224,9 +234,37 @@
    "label": "Stock Entry",
    "options": "Stock Entry",
    "read_only": 1
+  },
+  {
+   "fieldname": "get_items",
+   "fieldtype": "Button",
+   "label": "Get Actions"
+  },
+  {
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Planned Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Planned End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Actual End Date"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Activity Type",
+   "options": "Action Type"
   }
  ],
- "modified": "2020-05-20 12:18:19.338880",
+ "modified": "2020-10-31 17:39:51.316478",
  "modified_by": "Administrator",
  "module": "Ticket Management",
  "name": "Ticket",

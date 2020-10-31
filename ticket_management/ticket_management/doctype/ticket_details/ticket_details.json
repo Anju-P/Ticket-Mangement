@@ -9,6 +9,7 @@
   "column_break_3",
   "start_time",
   "end_time",
+  "status",
   "duration",
   "more_information_section",
   "opportunity"
@@ -17,16 +18,22 @@
   {
    "fieldname": "type_of_task",
    "fieldtype": "Link",
+   "in_filter": 1,
    "in_list_view": 1,
+   "in_preview": 1,
    "label": "Action",
-   "options": "Ticket Actions"
+   "options": "Ticket Action",
+   "reqd": 1,
+   "search_index": 1
   },
   {
+   "default": "Now",
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Date",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "column_break_3",
@@ -36,13 +43,15 @@
    "fieldname": "start_time",
    "fieldtype": "Time",
    "in_list_view": 1,
-   "label": "Start Time"
+   "label": "Start Time",
+   "search_index": 1
   },
   {
    "fieldname": "end_time",
    "fieldtype": "Time",
    "in_list_view": 1,
-   "label": "End Time"
+   "label": "End Time",
+   "search_index": 1
   },
   {
    "fieldname": "duration",
@@ -60,10 +69,18 @@
    "label": "Opportunity",
    "options": "Opportunity",
    "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nWorking\nCompleted",
+   "reqd": 1
   }
  ],
  "istable": 1,
- "modified": "2020-05-15 14:13:17.527141",
+ "modified": "2020-10-29 16:50:23.858898",
  "modified_by": "Administrator",
  "module": "Ticket Management",
  "name": "Ticket Details",
