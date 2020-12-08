@@ -44,13 +44,13 @@
   {
    "depends_on": "PR-TKT-.YYYY.-",
    "fieldname": "naming_series",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "Series",
    "options": "TKT-.YYYY.-"
   },
   {
    "fieldname": "title",
-   "fieldtype": "select",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Title",
